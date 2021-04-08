@@ -1,0 +1,58 @@
+<mat-card>
+    <mat-card-title>Exclusão de Cadastro</mat-card-title>
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="Nome completo"
+                 [value]="person.fullName" name="fullName" disabled>
+            </mat-form-field>
+        </form>
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="cpf" 
+                [value]="person.cpf" name="cpf" disabled>
+            </mat-form-field>
+        </form>
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="email" 
+                [value]="person.email" name="email" disabled>
+            </mat-form-field>
+        </form>
+    
+        <form >
+            <mat-radio-group aria-label="selecione a Opção"
+             [value]="person.gender" name="gender" disabled >
+                <mat-radio-button  value="0">Home</mat-radio-button>
+                <mat-radio-button  value="1">Mulher</mat-radio-button>
+              </mat-radio-group>
+        </form>
+        
+        <form>
+            <mat-form-field appearance="fill">
+                <mat-label>Data de nascimento</mat-label>
+              <!-- #docregion toggle -->
+                <input matInput [matDatepicker]="picker"[value]="person.birthday" name="birthday" disabled>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              <!-- #enddocregion toggle -->
+              </mat-form-field>
+        </form>
+       
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="Descrição"
+                [value]="person.description" name="description" disabled>
+            </mat-form-field>
+        </form> 
+
+<button mat-raised-button (click)="deletePerson()" color="warn">
+    Excluir
+</button>
+
+<button mat-raised-button (click)="cancel()">
+    Cancelar
+</button>
+   
+</mat-card>
+
+
